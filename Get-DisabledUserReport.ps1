@@ -212,10 +212,10 @@ Add-Content $report "</body>"
 Add-Content $report "</html>" 
     
 ##Assembles and sends completion email with DL information##
-$emailFrom = "ADCleanUp@CMGRP.com"
-$emailTo = "Shanlon@cmgrp.com"
+$emailFrom = "name@company.com"
+$emailTo = "name@company.com"
 $subject = "COMPANY $Region Terminated User Cleanup Script Complete"
-$smtpServer = "relay-mail.interpublic.com"
+$smtpServer = "SMTP Relay"
 $body = Get-Content $report | Out-String
 
 Send-MailMessage -To $emailTo -From $emailFrom -Subject $subject -BodyAsHtml -Body $body -SmtpServer $smtpServer
